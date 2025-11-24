@@ -1,0 +1,185 @@
+<html lang="en">
+    
+    <head>
+        <title>Dress Up Game</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">        
+    </head>
+    
+    
+<body>
+    
+    <!-- Page decorations start here... -->
+    <div class="vertical-text">DRES</div>
+    <div class="vertical-text-right">•SUP!</div>
+    
+    <div class="vertical-marquee marquee1">
+        <div class="marquee-content">
+        <span>@0000&nbsp;&nbsp;&nbsp;893&nbsp;&nbsp;&nbsp;</span>
+        <span>@0000&nbsp;&nbsp;&nbsp;893&nbsp;&nbsp;&nbsp;</span>
+        <span>@0000&nbsp;&nbsp;&nbsp;893&nbsp;&nbsp;&nbsp;</span>
+        <span>@0000&nbsp;&nbsp;&nbsp;893&nbsp;&nbsp;&nbsp;</span>
+        </div>
+    </div>
+    
+    <div class="vertical-marquee marquee2">
+        <div class="marquee-content">
+        <span>@0000&nbsp;&nbsp;&nbsp;893&nbsp;&nbsp;&nbsp;</span>
+        <span>@0000&nbsp;&nbsp;&nbsp;893&nbsp;&nbsp;&nbsp;</span>
+        <span>@0000&nbsp;&nbsp;&nbsp;893&nbsp;&nbsp;&nbsp;</span>
+        <span>@0000&nbsp;&nbsp;&nbsp;893&nbsp;&nbsp;&nbsp;</span>
+        </div>
+    </div>
+
+    <div class="vertical-marquee marquee1-right">
+        <div class="marquee-content">
+        <span>@0000&nbsp;&nbsp;&nbsp;893&nbsp;&nbsp;&nbsp;</span>
+        <span>@0000&nbsp;&nbsp;&nbsp;893&nbsp;&nbsp;&nbsp;</span>
+        <span>@0000&nbsp;&nbsp;&nbsp;893&nbsp;&nbsp;&nbsp;</span>
+        <span>@0000&nbsp;&nbsp;&nbsp;893&nbsp;&nbsp;&nbsp;</span>
+        </div>
+    </div>
+    
+    <div class="vertical-marquee marquee2-right">
+        <div class="marquee-content">
+        <span>@0000&nbsp;&nbsp;&nbsp;893&nbsp;&nbsp;&nbsp;</span>
+        <span>@0000&nbsp;&nbsp;&nbsp;893&nbsp;&nbsp;&nbsp;</span>
+        <span>@0000&nbsp;&nbsp;&nbsp;893&nbsp;&nbsp;&nbsp;</span>
+        <span>@0000&nbsp;&nbsp;&nbsp;893&nbsp;&nbsp;&nbsp;</span>
+        </div>
+    </div>
+    <!-- ...page decorations end here. 
+            Removing the whole section won't affect the dress-up game. -->
+    
+    <!-- Three columns of buttons - "previous", "hide" and "fit" 
+        (LEFT side of the page). -->
+    <div id="container">
+        
+        <div id="buttons"> 
+        <input type="button" value="< earrings" id="prevearings" onclick="prevearings()">
+        <input type="button" value="< necklace 1" id="prevnecklace1" onclick="prevnecklace1()">
+        <input type="button" value="< necklace 2" id="prevnecklace2" onclick="prevnecklace2()">
+        <input type="button" value="< top (layer 1)" id="prevtop1" onclick="prevtop1()">
+        <input type="button" value="< top (layer 2)" id="prevtop2" onclick="prevtop2()">
+        <input type="button" value="< top (layer 3)" id="prevtop3" onclick="prevtop3()">
+        <input type="button" value="< top (layer 4)" id="prevtop4" onclick="prevtop4()">
+        <input type="button" value="< bottom" id="prevbottom" onclick="prevbottom()">
+        <input type="button" value="< socks" id="prevsocks" onclick="prevsocks()">
+        <input type="button" value="< shoes" id="prevshoes" onclick="prevshoes()">
+        <input type="button" value="< bag" id="prevbag" onclick="prevbag()">
+        </div>
+        
+        <div id="hide_left">
+        <input type="button" value="👁" class="hide-btn" data-target="earrings">
+        <input type="button" value="👁" class="hide-btn" data-target="necklace1">
+        <input type="button" value="👁" class="hide-btn" data-target="necklace2">
+        <input type="button" value="" class="hide-btn" data-target="top_under">
+        <input type="button" value="👁" class="hide-btn" data-target="top_middle,collar2">
+        <input type="button" value="👁" class="hide-btn" data-target="top_middle1,collar3">
+        <input type="button" value="👁" class="hide-btn" data-target="top_over,back">
+        <input type="button" value="" class="hide-btn" data-target="bottom">
+        <input type="button" value="👁" class="hide-btn" data-target="socks">
+        <input type="button" value="" class="hide-btn" data-target="shoes">
+        <input type="button" value="👁" class="hide-btn" data-target="bag">
+        </div>
+        
+        <div id="fit_left">
+        <input type="button" value="fit!" class="fit-btn" data-target="earrings">
+        <input type="button" value="fit!" class="fit-btn" data-target="necklace1">
+        <input type="button" value="fit!" class="fit-btn" data-target="necklace2">
+        <input type="button" value="fit!" class="fit-btn" data-target="top_under">
+        <input type="button" value="fit!" class="fit-btn" data-target="top_middle">
+        <input type="button" value="fit!" class="fit-btn" data-target="top_middle1">
+        <input type="button" value="fit!" class="fit-btn" data-target="top_over">
+        <input type="button" value="fit!" class="fit-btn" data-target="bottom">
+        <input type="button" value="fit!" class="fit-btn" data-target="socks">
+        <input type="button" value="fit!" class="fit-btn" data-target="shoes">
+        <input type="button" value="fit!" class="fit-btn" data-target="bag">
+        </div>
+             
+        <!-- Layers of clothes. 
+             Each layer will contain all the items of its category to scroll through. 
+             The order of the layers is important! 
+             The "back" is the bottom layer, and the "collar3" is the top. -->
+        
+        <div id="figure">
+            <div id="back"></div>
+            <div id="body"></div>
+            <div id="socks"></div> 
+            <div id="shoes"></div>
+            <div id="top_under"></div>
+            <div id="bottom"></div>    
+            <div id="top_middle"></div>
+            <div id="top_middle1"></div>
+            <div id="top_over"></div> 
+            <div id="earrings"></div>
+            <div id="necklace1"></div>
+            <div id="necklace2"></div>
+            <div id="bag"></div>
+            <div id="collar2"></div>
+            <div id="collar3"></div>
+        </div>
+        
+        <!-- three columns of buttons - "next", "hide" and "fit" 
+            (RIGHT side of the page). 
+            Ignore the issue of duplicate ID="buttons" It works. -->
+
+        <div id="fit_right">
+        <input type="button" value="fit!" class="fit-btn" data-target="earrings">
+        <input type="button" value="fit!" class="fit-btn" data-target="necklace1">
+        <input type="button" value="fit!" class="fit-btn" data-target="necklace2">
+        <input type="button" value="fit!" class="fit-btn" data-target="top_under">
+        <input type="button" value="fit!" class="fit-btn" data-target="top_middle">
+        <input type="button" value="fit!" class="fit-btn" data-target="top_middle1">
+        <input type="button" value="fit!" class="fit-btn" data-target="top_over">
+        <input type="button" value="fit!" class="fit-btn" data-target="bottom">
+        <input type="button" value="fit!" class="fit-btn" data-target="socks">
+        <input type="button" value="fit!" class="fit-btn" data-target="shoes">
+        <input type="button" value="fit!" class="fit-btn" data-target="bag">
+        </div>
+        
+        <div id="hide_right">
+        <input type="button" value="👁" class="hide-btn" data-target="earrings">
+        <input type="button" value="👁" class="hide-btn" data-target="necklace1">
+        <input type="button" value="👁" class="hide-btn" data-target="necklace2">
+        <input type="button" value="" class="hide-btn" data-target="top_under">
+        <input type="button" value="👁" class="hide-btn" data-target="top_middle,collar2">
+        <input type="button" value="👁" class="hide-btn" data-target="top_middle1,collar3">
+        <input type="button" value="👁" class="hide-btn" data-target="top_over,back">
+        <input type="button" value="" class="hide-btn" data-target="bottom">
+        <input type="button" value="👁" class="hide-btn" data-target="socks">
+        <input type="button" value="" class="hide-btn" data-target="shoes">
+        <input type="button" value="👁" class="hide-btn" data-target="bag">
+        </div>
+        
+        <div id="buttons">
+        <input type="button" value="earrings >" id="nextearings" onclick="nextearings()">
+        <input type="button" value="necklace1 >" id="nextnecklace1" onclick="nextnecklace1()">
+        <input type="button" value="necklace2 >" id="nextnecklace2" onclick="nextnecklace2()">
+        <input type="button" value="top (layer 1) >" id="nexttop1" onclick="nexttop1()">
+        <input type="button" value="top (layer 2) >" id="nexttop2" onclick="nexttop2()">
+        <input type="button" value="top (layer 3) >" id="nexttop3" onclick="nexttop3()">
+        <input type="button" value="top (layer 4) >" id="nexttop4" onclick="nexttop4()">
+        <input type="button" value="bottom >" id="nextbottom" onclick="nextbottom()">        
+        <input type="button" value="socks >" id="nextsocks" onclick="nextsocks()">
+        <input type="button" value="shoes >" id="nextshoes" onclick="nextshoes()">
+        <input type="button" value="bag >" id="nextbag" onclick="nextbag()">
+        </div>
+
+    </div>
+
+    <!-- The button on the bottom for generating random outfits. -->
+    <div id="random"> 
+        <input type="button" value="*˚⁺.random outfit.⁺˚*" id="rng_bttn" onclick="rng_outfit()">
+    </div>
+    
+    <!-- The button on top of the page for switching to another character (NOT FUNCTIONAL YET). -->
+    <div id="sun-moon"> 
+        <input type="button" value="銀🌒銀 --> 金☀️金" id="sun-moon_bttn" onclick="...()">
+    </div>
+    
+    <script src="JS/code.js"></script>
+    
+</body>
+</html>

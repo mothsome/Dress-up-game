@@ -1,0 +1,433 @@
+/* page structure */
+
+html, body {
+    overflow: hidden;  /* no scrollbars, no movement */
+    height: 100%;
+}
+
+#container {
+  display: flex;            
+  width: 100vw;              
+  height: 100vh;             
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+#container > div {               
+  display: flex;             
+  flex-direction: column;    
+  box-sizing: border-box;
+}
+
+#container > div:first-child {
+    align-items: flex-end; 
+}
+
+#figure {
+    position: relative;     /* for absolute children */
+    flex: 2;                
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+}
+
+
+
+
+/* positioning all clothes categories (they occupy the same space) */
+
+#earrings,
+#necklace1,
+#necklace2,
+#bag,
+#top_over,
+#top_middle,
+#top_middle1,
+#top_under,
+#bottom,
+#shoes,
+#socks,
+#back,
+#collar2,
+#collar3 {
+    position: absolute;
+    width: 100vh;
+    height: 100vh;
+}
+
+/* positioning the character's body */
+#body{
+    position: absolute;
+    width: 100vh;
+    height: 100vh;
+    background-image: url("../IMG/body.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* positioning all the clothes items */
+.Top1-1, .Top1-2, .Top1-3, .Top1-4, .Top1-5, .Top1-6,
+.Top2-1, .Top2-2, .Top2-3, .Top2-3-1, .Top2-4, .Top2-5, .Top2-6, .Top2-7, .Top2-8, .Top2-8-1,
+.Top3-1, .Top3-2, .Top3-2-1, .Top3-3, .Top3-4, .Top3-5, .Top3-6, .Top3-6-1, .Top3-7, .Top3-7-1, .Top3-8, .Top3-9, .Top3-9-1,
+.Top4-1, .Top4-2, .Top4-2-1, .Top4-3, .Top4-4, .Top4-5,
+.Bot-1, .Bot-2, .Bot-2-1, .Bot-3,.Bot-4, .Bot-5, .Bot-6, .Bot-6-1, .Bot-7, .Bot-8,.Bot-9, .Bot-10,
+.Socks-1, .Socks-2, .Socks-3, .Socks-4, .socks-5, .socks-6,
+.Shoes-1, .Shoes-2, .Shoes-3, .Shoes-4,
+.Back4-1, .Back4-2, .Back4-3, .Back4-4, .back4-5,
+.Collar2-8, .Collar2-8-1, 
+.Collar3-4, .Collar3-6, .Collar3-6-1,
+.Bag-1, .Bag-1-1, .Bag-2, .Bag-2-1, .Bag-3, .Bag-3-1, .Bag-4, .Bag-4-1, .Bag-5, .Bag-5-1,
+.Ear-1, .Ear-2, .Ear-3, .Ear-4,
+.Neck1-1, .Neck1-2, .Neck1-3, .Neck2-1, .Neck2-1-1, .Neck2-2  
+{
+    position: absolute;
+    width: 100vh;
+    height: 100vh;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* connecting actual image files*/
+.Top1-1 {background-image: url("../IMG/Top1-1.png");}
+.Top1-2 {background-image: url("../IMG/Top1-2.png");}
+.Top1-3 {background-image: url("../IMG/Top1-3.png");}
+.Top1-4 {background-image: url("../IMG/Top1-4.png");}
+.Top1-5 {background-image: url("../IMG/Top1-5.png");}
+.Top1-6 {background-image: url("../IMG/Top1-6.png");}
+.Top2-1 {background-image: url("../IMG/Top2-1.png");}
+.Top2-2 {background-image: url("../IMG/Top2-2.png");}
+.Top2-3 {background-image: url("../IMG/Top2-3.png");}
+.Top2-3-1 {background-image: url("../IMG/Top2-3-1.png");}
+.Top2-4 {background-image: url("../IMG/Top2-4.png");}
+.Top2-5{background-image: url("../IMG/Top2-5.png");}
+.Top2-6{background-image: url("../IMG/Top2-6.png");}
+.Top2-7{background-image: url("../IMG/Top2-7.png");}
+.Top2-8{background-image: url("../IMG/Top2-8.png");}
+.Top2-8-1{background-image: url("../IMG/Top2-8-1.png");}
+.Top3-1{background-image: url("../IMG/Top3-1.png");}
+.Top3-2{background-image: url("../IMG/Top3-2.png");}
+.Top3-2-1{background-image: url("../IMG/Top3-2-1.png");}
+.Top3-3{background-image: url("../IMG/Top3-3.png");}
+.Top3-4{background-image: url("../IMG/Top3-4.png");}
+.Top3-5{background-image: url("../IMG/Top3-5.png");}
+.Top3-6{background-image: url("../IMG/Top3-6.png");}
+.Top3-6-1{background-image: url("../IMG/Top3-6-1.png");}
+.Top3-7{background-image: url("../IMG/Top3-7.png");}
+.Top3-7-1{background-image: url("../IMG/Top3-7-1.png");}
+.Top3-8{background-image: url("../IMG/Top3-8.png");}
+.Top3-9{background-image: url("../IMG/Top3-9.png");}
+.Top3-9-1{background-image: url("../IMG/Top3-9-1.png");}
+.Top4-1{background-image: url("../IMG/Top4-1.png");}
+.Top4-2{background-image: url("../IMG/Top4-2.png");}
+.Top4-2-1{background-image: url("../IMG/Top4-2-1.png");}
+.Top4-3{background-image: url("../IMG/Top4-3.png");}
+.Top4-4{background-image: url("../IMG/Top4-4.png");}
+.Top4-5{background-image: url("../IMG/Top4-5.png");}
+.Bot-1{background-image: url("../IMG/Bot-1.png");}
+.Bot-2{background-image: url("../IMG/Bot-2.png");}
+.Bot-2-1{background-image: url("../IMG/Bot-2-1.png");}
+.Bot-3{background-image: url("../IMG/Bot-3.png");}
+.Bot-4{background-image: url("../IMG/Bot-4.png");}
+.Bot-5{background-image: url("../IMG/Bot-5.png");}
+.Bot-6{background-image: url("../IMG/Bot-6.png");}
+.Bot-6-1{background-image: url("../IMG/Bot-6-1.png");}
+.Bot-7{background-image: url("../IMG/Bot-7.png");}
+.Bot-8{background-image: url("../IMG/Bot-8.png");}
+.Bot-9{background-image: url("../IMG/Bot-9.png");}
+.Bot-10{background-image: url("../IMG/Bot-10.png");}
+.Socks-1{background-image: url("../IMG/socks-1.png");}
+.Socks-2{background-image: url("../IMG/socks-2.png");}
+.Socks-3{background-image: url("../IMG/socks-3.png");}
+.Socks-4{background-image: url("../IMG/socks-4.png");}
+.Socks-5{background-image: url("../IMG/socks-5.png");}
+.Socks-6{background-image: url("../IMG/socks-6.png");}
+.Shoes-1{background-image: url("../IMG/shoes-1.png");}
+.Shoes-2{background-image: url("../IMG/shoes-2.png");}
+.Shoes-3{ background-image: url("../IMG/shoes-3.png");}
+.Shoes-4{background-image: url("../IMG/shoes-4.png");}
+.Back4-1{background-image: url("../IMG/back4-1.png");}
+.Back4-2{background-image: url("../IMG/back4-2.png");}
+.Back4-3{background-image: url("../IMG/back4-3.png");}
+.Back4-4{background-image: url("../IMG/back4-4.png");}
+.Back4-5{background-image: url("../IMG/back4-5.png");}
+.Collar3-6{background-image: url("../IMG/Collar3-6.png");}
+.Collar3-6-1{background-image: url("../IMG/Collar3-6-1.png");}
+.Collar3-4{background-image: url("../IMG/Collar3-4.png");}
+.Collar2-8{background-image: url("../IMG/Collar2-8.png");}
+.Collar2-8-1{background-image: url("../IMG/Collar2-8-1.png");}
+.Bag-1{background-image: url("../IMG/Bag-1.png");} 
+.Bag-1-1{background-image: url("../IMG/Bag-1-1.png");}  
+.Bag-2{background-image: url("../IMG/Bag-2.png");}  
+.Bag-2-1{background-image: url("../IMG/Bag-2-1.png");}  
+.Bag-3{background-image: url("../IMG/Bag-3.png");} 
+.Bag-3-1{background-image: url("../IMG/Bag-3-1.png");} 
+.Bag-4{background-image: url("../IMG/Bag-4.png");} 
+.Bag-4-1{background-image: url("../IMG/Bag-4-1.png");} 
+.Bag-5{background-image: url("../IMG/Bag-5.png");} 
+.Bag-5-1{background-image: url("../IMG/Bag-5-1.png");} 
+.Ear-1{background-image: url("../IMG/Ear-1.png");} 
+.Ear-2{background-image: url("../IMG/Ear-2.png");} 
+.Ear-3{background-image: url("../IMG/Ear-3.png");} 
+.Ear-4{background-image: url("../IMG/Ear-4.png");} 
+.Neck1-1{background-image: url("../IMG/Neck1-1.png");} 
+.Neck1-2{background-image: url("../IMG/Neck1-2.png");} 
+.Neck1-3{background-image: url("../IMG/Neck1-3.png");} 
+.Neck2-1{background-image: url("../IMG/Neck2-1.png");} 
+.Neck2-1-1{background-image: url("../IMG/Neck2-1-1.png");} 
+.Neck2-2{background-image: url("../IMG/Neck2-2.png");}  
+
+
+
+
+/* styling buttons */
+
+#buttons, 
+#hide_left, 
+#hide_right,
+#fit_right,
+#fit_left {
+    justify-content: space-between; 
+    align-items: flex-start;        
+    padding-top: 5%;              
+    padding-bottom: 5%;
+    z-index: 100;
+}
+
+#buttons {
+    flex: 2;
+}
+
+#hide_left,
+#hide_right,
+#fit_right,
+#fit_left {
+  flex: 0 0 3vw;
+}
+
+#hide_left,
+#fit_left {
+    align-items: flex-end;
+}
+
+#buttons input[type="button"], 
+#hide_left input[type="button"], 
+#hide_right input[type="button"], 
+#fit_left input[type="button"], 
+#fit_right input[type="button"],
+#random input[type="button"],
+#sun-moon input[type="button"] {
+    background: transparent;
+    border: none;
+    color: black;
+    font-size: 16px;
+    font-family: "Courier Prime", monospace;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;               
+    transition: font-style 0.2s ease;
+}
+
+
+/* animation for hovers */
+
+@keyframes italicOblique {
+    0%   { font-style: italic; font-weight: normal; }
+    33%  { font-style: oblique; font-weight: normal; }
+    66%  { font-style: normal; font-weight: bold; }
+    100% { font-style: italic; font-weight: normal; }
+}
+
+@keyframes italicOblique1 {
+    0%   { font-style: normal; font-weight: bold; }
+    33%  { font-style: normal; font-weight: normal; }
+    66%  { font-style: normal; font-weight: bold; }
+    100% { font-style: normal; font-weight: normal; }
+}
+
+
+/* styling hovers */
+
+#buttons input[type="button"]:hover,
+#hide_left input[type="button"]:hover,
+#hide_right input[type="button"]:hover,
+#fit_left input[type="button"]:hover,
+#fit_right input[type="button"]:hover,
+#random input[type="button"]:hover {
+    font-style: italic;
+    animation: italicOblique 0.3s ease-in-out infinite alternate;
+}
+
+#sun-moon input[type="button"]:hover {
+    animation: italicOblique1 0.3s ease-in-out infinite alternate;
+}
+
+/* does nothing ._. */
+#buttons input[type="button"]:active {
+    font-style: oblique;
+}
+
+/* styling "hide" buttons */
+input.hide-btn.hidden {
+    text-decoration: line-through red 3px;
+}
+
+/* hiding "fit" buttons by default */
+.fit-btn {
+    visibility: hidden;
+}
+
+/* styling "randon outfit" button */
+#random {
+    position: fixed;
+    bottom: 2vh;              
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;            
+    pointer-events: auto;   
+}
+
+/* styling the button she told you not to worry about  */
+#sun-moon {
+    position: fixed;
+    bottom: 95vh;             
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 9999;           
+    pointer-events: auto;     
+}
+
+
+
+/* styling the page decorations */
+.vertical-text,
+.vertical-text-right {
+    position: fixed;
+    top: 50%;
+    font-family: "New Rocker", monospace;
+    font-size: 19vw;
+    color: blue;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.vertical-text {
+    left: 0;
+    transform: rotate(-90deg) translate(-50%, 0);
+    transform-origin: top left;
+}
+
+.vertical-text-right {
+    right: 0;
+    transform: rotate(90deg) translate(50%, 0);
+    transform-origin: top right;
+}
+
+.vertical-marquee {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Left side */
+.marquee1, .marquee2 {
+    left: 0;
+}
+
+.marquee1-right, .marquee2-right {
+    right: 0;          /* position to right */
+}
+
+.marquee-content {
+    position: absolute;
+    transform: translateX(-50%) rotate(90deg);
+    transform-origin: center;
+    font-family: "Courier Prime", monospace;
+    font-size: 1vw;
+    color: black;
+    white-space: nowrap;
+    animation: scroll-down 10s linear infinite;
+}
+
+/* Adjust left/right alignment for content */
+.marquee1 .marquee-content,
+.marquee2 .marquee-content {
+    left: 10%;
+}
+
+.marquee1-right .marquee-content,
+.marquee2-right .marquee-content {
+    left: 90%;         /* mirror to right side */
+    animation: scroll-up 10s linear infinite;
+}
+
+/* Offset animations */
+.marquee1 .marquee-content { top: 0%; animation-delay: 0s; }
+.marquee2 .marquee-content { top: -25%; animation-delay: -5s; }
+
+.marquee1-right .marquee-content { top: 0%; animation-delay: 0s; }
+.marquee2-right .marquee-content { top: -25%; animation-delay: -5s; }
+
+@keyframes scroll-down {
+    0%   { top: -100%; }
+    100% { top: 100%; }
+}
+
+@keyframes scroll-up {
+    0%   { top: 100%; }
+    100% { top: -100%; }
+}
+
+/* ------------------------------------
+   MOBILE FIX
+---------------------------------------*/
+@media (max-width: 768px) {
+
+    #hide_left,
+    #hide_right,
+    #fit_left,
+    #fit_right {
+        flex: 0 0 1vw; 
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+    }
+
+    #buttons {
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+    }
+
+    /* Button text readable */
+    #buttons input[type="button"],
+    #hide_left input[type="button"],
+    #hide_right input[type="button"],
+    #fit_left input[type="button"],
+    #fit_right input[type="button"],
+    #random input[type="button"],
+    #sun-moon input[type="button"] {
+        font-size: min(3vw, 18px);
+        line-height: 1.4;
+    }
+
+    /* Spacing */
+    #buttons input,
+    #hide_left input,
+    #hide_right input,
+    #fit_left input,
+    #fit_right input {
+        margin: 2vw 0;
+    }
+}
+
